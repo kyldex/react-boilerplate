@@ -6,19 +6,14 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  mode: 'development',
-  devtool: 'inline-source-map',
-  devServer: {
-    port: 8000
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        use: 'ts-loader',
+        use: 'ts-loader'
       },
       {
         test: /\.(css|.module.css)$/,
@@ -30,12 +25,12 @@ module.exports = {
         generator: {
           filename: '[name][ext]'
         }
-      },
+      }
     ]
   },
   resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
   plugins: [
     new MiniCssExtractPlugin({ filename: 'style.css' }),
     new CleanWebpackPlugin()
-  ],
+  ]
 };
