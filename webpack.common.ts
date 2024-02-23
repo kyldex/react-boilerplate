@@ -1,8 +1,9 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import path from 'path';
+import { Configuration } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-module.exports = {
+const config: Configuration = {
   entry: './src/index.tsx',
   output: {
     filename: 'app.js',
@@ -34,3 +35,5 @@ module.exports = {
     new CleanWebpackPlugin()
   ]
 };
+
+export default config;
