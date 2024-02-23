@@ -1,8 +1,8 @@
-import './App.css';
+import './App.scss';
 
-interface Props {
+type Props = {
   title: string;
-}
+};
 
 const App = ({ title }: Props) => {
   return (
