@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+@use './variables' as *;
+
+// These exports are processed by css-loader
+// and are not included in the final CSS output.
+// https://stackoverflow.com/a/57538082
+:export {
+  smBreakpoint: map.get($breakpoints, sm);
+  mdBreakpoint: map.get($breakpoints, md);
+  lgBreakpoint: map.get($breakpoints, lg);
+  xlBreakpoint: map.get($breakpoints, xl);
+}
