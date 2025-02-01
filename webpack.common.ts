@@ -18,7 +18,20 @@ const config: Configuration = {
       },
       {
         test: /\.(css|scss)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: 'icss',
+                namedExport: false
+              }
+            }
+          },
+          { loader: 'sass-loader' }
+        ]
       },
       {
         test: /\.html$/,
@@ -26,6 +39,10 @@ const config: Configuration = {
         generator: {
           filename: '[name][ext]'
         }
+      },
+      {
+        test: /\.jpg$/,
+        type: 'asset/resource'
       }
     ]
   },

@@ -1,6 +1,46 @@
-.title-container {
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
+
+.app-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100vh;
+
+  header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: $color-off-white;
+  }
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 16px 2rem;
+    @include media-query-sm {
+      padding: 5rem 16px 2rem;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .image-container {
+      margin-top: 3rem;
+      max-width: 250px;
+      @include media-query-sm {
+        margin-top: 4rem;
+        max-width: 300px;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: $color-off-white;
+  }
 }
